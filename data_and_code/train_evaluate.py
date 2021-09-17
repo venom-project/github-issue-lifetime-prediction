@@ -15,7 +15,11 @@ import itertools
 from scipy import stats
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn import cross_validation, metrics
+#from sklearn import cross_validation, metrics
+from sklearn.model_selection import KFold
+import sklearn.metrics as metrics
+
+
 from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.linear_model import SGDClassifier
 from sklearn.feature_selection import chi2, SelectKBest
@@ -33,13 +37,13 @@ CLOSED_AT = 365
 
 if len(sys.argv) >= 2:
     days = int(sys.argv[1])
-    print "Calculating dynamic features after {0} days".format(days)
+    print("Calculating dynamic features after {0} days".format(days))
     sys.stdout.flush()
     FEATURES_WHEN = days
 
 if len(sys.argv) >= 3:
     days = int(sys.argv[2])
-    print "Predicting issue closure at {0} days".format(days)
+    print("Predicting issue closure at {0} days".format(days))
     sys.stdout.flush()
     CLOSED_AT = days
 
@@ -142,12 +146,12 @@ missing_ids = set(issue_ds.issue_id.tolist()) - set(final_mentions.issue_id.toli
 
 issue_ds = pd.merge(issue_ds, final_mentions, how="inner")
 issue_ds = pd.merge(issue_ds, cleaned_text, how="inner")
-print issue_ds.shape
+print(issue_ds.shape)
 issue_ds = pd.merge(issue_ds, comments_text, how="left")
 
 issue_ds.loc[pd.isnull(issue_ds.comment_text), "comment_text"] = ""
 
-print issue_ds.shape
+print(issue_ds.shape)
 
 cols = issue_ds.columns.values.tolist()
 to_remove = ["issue_id", "elapsed", "closedin12", "issticky", "rid", "relative_month", "live_at_dynamic"]
@@ -205,7 +209,7 @@ test_short = (subset.loc[:, "created_at"].values + np.timedelta64(CLOSED_AT, 'D'
 test_short_rows = (subset.loc[:, "train"] == 0) & test_short & rows_not_closed
 subset.loc[test_short_rows, "train"] = 14
 
-print subset[["created_at", "closed_at", "train"]].groupby(["train"]).agg(["min", "max", "count"])
+print(subset[["created_at", "closed_at", "train"]].groupby(["train"]).agg(["min", "max", "count"]))
 
 
 
@@ -227,15 +231,15 @@ issue_ds.loc[(train_over_to_test & rows), "closedin12"] = 0
 elapsed = (issue_ds[rows].closed_at - issue_ds[rows].created_at).astype("timedelta64[s]") / 86400.0
 
 
-print issue_ds[["created_at", "closed_at", "closedin12", "train"]].groupby(["closedin12", "train"]).agg(
-    ["min", "max", "count"])
+print(issue_ds[["created_at", "closed_at", "closedin12", "train"]].groupby(["closedin12", "train"]).agg(
+    ["min", "max", "count"]))
 
 #
 for a, b in itertools.combinations(cols, 2):
 
     val = stats.spearmanr(issue_ds[a].values, issue_ds[b].values).correlation
     if val > 0.5:
-        print "%{0},{1},{2:.3f}".format(a, b, val)
+        print("%{0},{1},{2:.3f}".format(a, b, val))
     # print a, b, stats.spearmanr(issue_ds[a].values, issue_ds[b].values)
 
 # %%
@@ -246,7 +250,7 @@ selector.fit(Xtrain, ytrain)
 
 vals1 = zip(cols, selector.scores_)
 for x, v in sorted(vals1, key=lambda y: y[1], reverse=True):
-    print v, x
+    print(v, x)
 
 
 
@@ -278,19 +282,29 @@ if MULTICLASS:
 
 
 def add_text_score(Xtrain, Xtest, issue_ds, col="cleaned_text", col_new="text_score", cols=None):
-    print "Text label", col, col_new
-    vectorizer = HashingVectorizer(decode_error='ignore', n_features=2 ** 22, ngram_range=(1, 3), non_negative=True)
+    print("Text label ", col, col_new)
+    #vectorizer = HashingVectorizer(decode_error='ignore', n_features=2 ** 22, ngram_range=(1, 3), non_negative=True)
+    vectorizer = HashingVectorizer(decode_error='ignore', n_features=2 ** 22, ngram_range=(1, 3), alternate_sign=False)
+
     # vectorizer = TfidfVectorizer(decode_error='ignore', max_features=5000,max_df=0.8, min_df=100, ngram_range=(1,2))
 
     Xtrain2 = vectorizer.fit_transform(issue_ds[issue_ds.train == 1][col].tolist())
     Xtest2 = vectorizer.transform(issue_ds[issue_ds.train == 0][col].tolist())
 
     scores = np.zeros((ytrain.shape[0], 1), dtype=np.float64)
-    sgdkw = {"loss": "log", "verbose": 0, "penalty": 'l2', "alpha": 1e-3, "n_iter": 5, "random_state": 42,
-             "class_weight": "balanced"}
-    kfold = cross_validation.KFold(Xtrain.shape[0], 2)
 
-    for train_index, test_index in kfold:
+    # https://github.com/scikit-learn/scikit-learn/pull/5036
+    #sgdkw = {"loss": "log", "verbose": 0, "penalty": 'l2', "alpha": 1e-3, "n_iter": 5, "random_state": 42,
+    #         "class_weight": "balanced"}
+    sgdkw = {"loss": "log", "verbose": 0, "penalty": 'l2', "alpha": 1e-3, "max_iter": 1000, "random_state": 42,
+             "class_weight": "balanced"}
+
+    #kfold = cross_validation.KFold(Xtrain.shape[0], 2)
+    kfold = KFold(n_splits=2)
+    kfold.get_n_splits(Xtrain)
+
+    #for train_index, test_index in kfold:
+    for train_index, test_index in kfold.split(Xtrain):
         bff = issue_ds[issue_ds.train == 1][col].values
         Xa = bff[train_index].tolist()
         Xb = bff[test_index].tolist()
@@ -317,8 +331,8 @@ Xtrain, Xtest, cols = add_text_score(Xtrain, Xtest, issue_ds, "cleaned_text", "t
 Xtrain, Xtest, cols = add_text_score(Xtrain, Xtest, issue_ds, "comment_text", "text_score_comments", cols=cols)
 
 
-print "Down sample"
-print "balance before", ytrain.sum() / float(ytrain.shape[0])
+print("Down sample")
+print("balance before", ytrain.sum() / float(ytrain.shape[0]))
 
 ntrain = ytrain.shape[0] * 1.0
 pos_labels = ytrain.sum()
@@ -326,7 +340,7 @@ neg_labels = ntrain - ytrain.sum()
 
 rate = pos_labels / ntrain
 if rate < 0.35:
-    print "f"
+    print("f")
     ideal = 0.35
     reduce1 = ideal / rate
     final_size = ntrain / reduce1 - pos_labels
@@ -339,10 +353,10 @@ if rate < 0.35:
         ytrain = ytrain[sel]
         # Xtrain2 = Xtrain2[sel,:]
 
-        print "subsampling done, pos class"
+        print("subsampling done, pos class")
 
 if rate > 0.65:
-    print "f"
+    print("f")
     ideal = 0.35
     reduce1 = ideal / (1.0 - rate)
     final_size = ntrain / reduce1 - neg_labels
@@ -356,9 +370,9 @@ if rate > 0.65:
         ytrain = ytrain[sel]
         # Xtrain2 = Xtrain2[sel,:]
 
-        print "subsampling done, neg class"
+        print("subsampling done, neg class")
 
-print "balance after", ytrain.sum() / float(ytrain.shape[0])
+print("balance after", ytrain.sum() / float(ytrain.shape[0]))
 
 
 clf = RandomForestClassifier(n_estimators=1000, n_jobs=N_THREADS, verbose=0, max_depth=5, random_state=1,
@@ -368,7 +382,7 @@ clf.fit(Xtrain, ytrain)
 
 method = "randomforest_ntrees=1000_m_depth=5"
 
-print "Training done"
+print("Training done")
 sys.stdout.flush()
 ypred = clf.predict_proba(Xtest)
 
@@ -384,14 +398,14 @@ acc = metrics.accuracy_score(ytest, ypred_lbl)
 f1 = metrics.f1_score(ytest, ypred_lbl, average="binary")
 
 conf = metrics.confusion_matrix(ytest, ypred_lbl)
-print conf
+print(conf)
 
 prec1 = metrics.precision_score(ytest, ypred_lbl, average="binary")
 rec1 = metrics.recall_score(ytest, ypred_lbl, average="binary")
 identifier = datetime.date.today().isoformat()
 
-print "Obtained auc {0:.3f} Feautres at {1} Predction at {2}, ACC={3:.3f} F1={4:.3f}".format(auc, FEATURES_WHEN,
-                                                                                             CLOSED_AT, acc, f1)
+print("Obtained auc {0:.3f} Feautres at {1} Predction at {2}, ACC={3:.3f} F1={4:.3f}".format(auc, FEATURES_WHEN,
+                                                                                             CLOSED_AT, acc, f1))
 log_str = "{0:.3f},{1},{2},{3},{4},{5}, {6},{7},{8},{9},{10}, {11}, {12}, {13}\n".format(auc, FEATURES_WHEN, CLOSED_AT,
                                                                                          predicate,
                                                                                          datetime.datetime.now().isoformat(),
@@ -404,7 +418,7 @@ log_str = "{0:.3f},{1},{2},{3},{4},{5}, {6},{7},{8},{9},{10}, {11}, {12}, {13}\n
                                                                                          1.0 * ytest.shape[0]), prec1,
                                                                                          rec1)
 
-print log_str
+print(log_str)
 if experiment is None:
     fp = open("results-%s.csv" % (identifier), "a")
 else:

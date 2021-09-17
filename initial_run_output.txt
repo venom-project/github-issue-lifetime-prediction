@@ -1,0 +1,2266 @@
+(posam) abramson@newbie:[/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code](master) : python run_experiments.py
+Calculating dynamic features after 0 days
+Predicting issue closure at 1 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  682756 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  283454 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-31 00:04:50 2013-08-31 23:58:34     125                 NaT                 NaT       0
+14    2014-12-31 00:00:30 2014-12-31 23:59:44     702                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-30 23:59:52  489629 2013-09-02 07:37:34 2014-12-31 23:59:04  292746
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  202724 2012-01-09 07:56:45 2014-12-31 23:16:39  121227
+           13    2013-08-31 00:04:50 2013-08-31 23:58:34     120                 NaT                 NaT       0
+           14    2014-12-31 00:00:30 2014-12-31 23:59:44     673                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  166024 2013-09-01 00:15:58 2014-12-31 23:53:26  166024
+           1     2012-01-08 07:28:06 2013-08-31 22:42:51   60978 2012-01-09 05:08:02 2013-08-31 23:47:30   60978
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+908414.9967699287 closed_before_project3m
+762015.7465737337 closed_before3m
+420375.87652260595 closed_before_project2w_sliding
+379604.88829770946 created_before_project3m
+317336.5163841727 commit_before_project3m
+228306.6679792858 created_before3m
+185419.30336239986 commit_before_project2w_sliding
+148048.95852568359 created_before_project2w_sliding
+52319.29005864322 commits_by_commiters_before3m
+38252.15944750792 body_len_strip
+7709.61586145823 comment_len_mean
+4016.581624672487 commit_before3m
+1018.7547981020672 ev_mentioned
+438.1187444468901 comment_before_12month
+397.6228324962931 commits_by_commenters_nunique
+57.84211916380252 ev_referenced
+50.75853586982696 ev_subscribed
+24.234852871579083 actors
+19.626804831025602 ev_labeled
+0.2213408945517703 ev_assigned
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.2312382917080644
+f
+subsampling done, pos class
+balance after 0.35000172194097184
+Training done
+[[207938 281691]
+ [ 36469 129555]]
+Obtained auc 0.651 Feautres at 0 Predction at 1, ACC=0.515 F1=0.449
+0.651,0,1,all,2021-09-17T01:13:31.154144,randomforest_ntrees=1000_m_depth=5, 0.5147433169679694,0.4488540890744366,174222,655653,0.35000172194097184, 0.25321930960431815, 0.3150304197487635, 0.7803389871343902
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 0 days
+Predicting issue closure at 7 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  679700 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  282043 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-25 00:10:26 2013-08-31 23:58:34    1536                 NaT                 NaT       0
+14    2014-12-25 00:02:22 2014-12-31 23:59:44    3758                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-24 23:59:34  377052 2013-09-08 08:10:48 2014-12-31 23:59:04  183107
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  162098 2012-01-21 06:50:33 2014-12-31 23:16:39   81968
+           13    2013-08-25 00:10:26 2013-08-31 23:58:34    1487                 NaT                 NaT       0
+           14    2014-12-25 00:02:22 2014-12-31 23:59:44    3611                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  275663 2013-09-01 00:15:58 2014-12-31 23:53:26  275663
+           1     2012-01-07 20:00:48 2013-08-31 22:42:51  100237 2012-01-09 05:08:02 2013-08-31 23:54:45  100237
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+1733540.1280017328 closed_before3m
+1675859.6854151045 closed_before_project3m
+755504.6620179965 closed_before_project2w_sliding
+653961.5981308095 created_before_project3m
+546995.9566976667 created_before3m
+451366.22296960664 commit_before_project3m
+300087.55795187625 commit_before_project2w_sliding
+201376.69870542618 created_before_project2w_sliding
+113411.2751804034 commits_by_commiters_before3m
+48729.8373070471 body_len_strip
+3750.1647295908697 comment_len_mean
+1412.7917759979123 comment_before_12month
+1277.746443877726 commits_by_commenters_nunique
+286.30265162597914 ev_mentioned
+264.90911956087155 ev_assigned
+119.15405203033207 ev_referenced
+98.80975015039004 ev_subscribed
+49.14520049493396 ev_labeled
+0.2635225924372739 commit_before3m
+0.19432991825228213 actors
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.3820954123544323
+balance after 0.3820954123544323
+Training done
+[[151230 225822]
+ [ 53315 222348]]
+Obtained auc 0.658 Feautres at 0 Predction at 7, ACC=0.572 F1=0.614
+0.658,0,7,all,2021-09-17T01:17:44.126038,randomforest_ntrees=1000_m_depth=5, 0.5723447446435275,0.614362705209627,262335,652715,0.3820954123544323, 0.4223328711612266, 0.4961242385701854, 0.8065935580763468
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 0 days
+Predicting issue closure at 14 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  675190 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  280354 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-18 00:08:02 2013-08-31 23:58:34    3225                 NaT                 NaT       0
+14    2014-12-18 00:02:00 2014-12-31 23:59:44    8268                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-17 23:59:33  329055 2013-09-16 19:25:15 2014-12-31 23:59:04  139413
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  145905 2012-01-21 06:50:33 2014-12-31 23:16:39   67368
+           13    2013-08-18 00:08:02 2013-08-31 23:58:34    3080                 NaT                 NaT       0
+           14    2014-12-18 00:02:00 2014-12-31 23:59:44    7914                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  319357 2013-09-01 00:15:58 2014-12-31 23:53:26  319357
+           1     2012-01-07 20:00:48 2013-08-31 22:42:51  114837 2012-01-09 05:08:02 2013-08-31 23:54:45  114837
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+1509660.7830591751 closed_before_project3m
+1486465.1304121874 closed_before3m
+656614.4954026977 closed_before_project2w_sliding
+527524.1573772924 created_before_project3m
+498941.1104389428 commit_before_project3m
+424335.8162586697 created_before3m
+326212.8416237015 commit_before_project2w_sliding
+140281.74685748763 commits_by_commiters_before3m
+135038.27710164382 created_before_project2w_sliding
+27381.827358007846 body_len_strip
+2946.3822200161967 comment_len_mean
+2664.216552753082 commit_before3m
+2054.6521312893183 comment_before_12month
+1816.6333801524288 commits_by_commenters_nunique
+786.2194022309869 ev_referenced
+712.0044634803919 ev_assigned
+428.6597252387917 ev_subscribed
+63.404668791646486 ev_labeled
+39.76144807834359 ev_mentioned
+2.3887129541376106 actors
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.44042386727109556
+balance after 0.44042386727109556
+Training done
+[[130298 198757]
+ [ 59171 260186]]
+Obtained auc 0.662 Feautres at 0 Predction at 14, ACC=0.602 F1=0.669
+0.662,0,14,all,2021-09-17T01:22:02.451151,randomforest_ntrees=1000_m_depth=5, 0.6022158750917627,0.6686007966079919,260742,648412,0.44042386727109556, 0.4925217300111657, 0.5669244328816433, 0.8147183246335605
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 0 days
+Predicting issue closure at 30 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  663872 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  276350 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-02 00:00:51 2013-08-31 23:58:34    7229                 NaT                 NaT       0
+14    2014-12-02 00:09:51 2014-12-31 23:59:44   19586                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-01 23:55:35  271631 2013-10-01 04:15:29 2014-12-31 23:59:04   92891
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  127699 2012-02-15 01:16:03 2014-12-31 23:16:39   52874
+           13    2013-08-02 00:00:51 2013-08-31 23:58:34    6792                 NaT                 NaT       0
+           14    2014-12-02 00:09:51 2014-12-31 23:59:44   18816                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  365879 2013-09-01 00:15:58 2014-12-31 23:54:54  365879
+           1     2012-01-04 22:32:17 2013-08-31 22:42:51  129331 2012-01-09 05:08:02 2013-08-31 23:54:45  129331
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+1346195.4952969432 closed_before_project3m
+1225855.4628231763 closed_before3m
+556011.0546201884 closed_before_project2w_sliding
+500989.8746531913 commit_before_project3m
+427412.7198372971 created_before_project3m
+341967.73503302364 created_before3m
+310159.5678731134 commit_before_project2w_sliding
+148183.50971165433 commits_by_commiters_before3m
+87380.72592264015 created_before_project2w_sliding
+12263.900545446439 body_len_strip
+4866.043284404183 commit_before3m
+3033.230835982604 comment_before_12month
+2502.7000939066274 ev_referenced
+2356.149337515859 commits_by_commenters_nunique
+2289.7370390702918 comment_len_mean
+1293.279772857301 ev_subscribed
+1290.0162557000067 ev_assigned
+82.1502450956078 ev_labeled
+58.27233142119173 ev_mentioned
+18.454229383426288 actors
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.5031747266856009
+balance after 0.5031747266856009
+Training done
+[[105572 166059]
+ [ 63238 302641]]
+Obtained auc 0.670 Feautres at 0 Predction at 30, ACC=0.640 F1=0.725
+0.670,0,30,all,2021-09-17T01:26:09.431550,randomforest_ntrees=1000_m_depth=5, 0.640324073347869,0.7252542898874762,257030,637510,0.5031747266856009, 0.5739188404887766, 0.6457030083208876, 0.8271614386176851
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 0 days
+Predicting issue closure at 90 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  625739 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  263160 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-06-03 00:02:10 2013-08-31 23:58:34   20419                 NaT                 NaT       0
+14    2014-10-03 00:05:12 2014-12-31 23:59:44   57719                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:18:29 2014-10-02 23:58:52  179994 2013-12-02 10:55:34 2014-12-31 23:59:04   37690
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   99304 2012-04-12 19:46:06 2014-12-31 23:16:39   37043
+           13    2013-06-03 00:02:10 2013-08-31 23:58:34   19356                 NaT                 NaT       0
+           14    2014-10-03 00:05:12 2014-12-31 23:59:44   55252                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  421080 2013-09-01 00:15:58 2014-12-31 23:54:54  421080
+           1     2012-01-04 22:32:17 2013-08-31 22:42:51  145162 2012-01-09 05:08:02 2013-08-31 23:54:45  145162
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+1166170.7965866937 closed_before_project3m
+1085392.8665150565 closed_before3m
+417734.22588132595 closed_before_project2w_sliding
+368330.8911369211 commit_before_project3m
+293760.3104036404 created_before_project3m
+282072.69814606244 created_before3m
+237061.07732288356 commit_before_project2w_sliding
+136132.7665384562 commits_by_commiters_before3m
+49270.29959540388 body_len_strip
+36321.58487320042 created_before_project2w_sliding
+4761.185359298794 ev_referenced
+4333.819879717446 comment_before_12month
+2387.331646073598 commits_by_commenters_nunique
+2077.494405036824 ev_subscribed
+1637.4939279246234 ev_assigned
+1586.4067455670217 comment_len_mean
+1520.7396540225736 commit_before3m
+258.9943335965012 ev_mentioned
+112.34541015666612 ev_labeled
+36.099433005456326 actors
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.5937921837801575
+balance after 0.5937921837801575
+Training done
+[[ 65927 114067]
+ [ 64115 356965]]
+Obtained auc 0.676 Feautres at 0 Predction at 90, ACC=0.704 F1=0.800
+0.676,0,90,all,2021-09-17T01:30:09.486979,randomforest_ntrees=1000_m_depth=5, 0.7035606264786033,0.8002694728912961,244466,601074,0.5937921837801575, 0.700546022619511, 0.7578359856655175, 0.8477367721098129
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 0 days
+Predicting issue closure at 180 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  581223 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  243501 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-03-05 00:10:36 2013-08-31 23:58:34   40078                 NaT                 NaT       0
+14    2014-07-05 00:01:22 2014-12-31 23:59:44  102235                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2014-07-04 23:59:12  112663 2014-03-02 03:19:09 2014-12-31 23:59:04   13427
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   74707 2012-08-10 04:18:15 2014-12-31 23:16:39   31480
+           13    2013-03-05 00:10:36 2013-08-31 23:58:34   38390                 NaT                 NaT       0
+           14    2014-07-05 00:01:22 2014-12-31 23:59:44   98320                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  445343 2013-09-01 00:15:58 2014-12-31 23:55:57  445343
+           1     2012-01-04 22:32:02 2013-08-31 22:42:51  150725 2012-01-09 05:08:02 2013-08-31 23:54:45  150725
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+1425868.2405768544 closed_before_project3m
+909178.7886539714 closed_before3m
+424308.2972775706 closed_before_project2w_sliding
+419842.2619274927 created_before_project3m
+326616.76377506927 commit_before_project3m
+202518.47111466306 created_before3m
+163289.29789577896 commit_before_project2w_sliding
+96086.23437378314 commits_by_commiters_before3m
+36091.736529995374 body_len_strip
+26558.793972534695 created_before_project2w_sliding
+4282.71206926248 comment_before_12month
+4033.8227841859302 ev_referenced
+1720.18707151624 commits_by_commenters_nunique
+1395.3698874075087 ev_subscribed
+1149.4147155415494 comment_len_mean
+1111.023024455424 ev_assigned
+164.35263685810745 ev_mentioned
+149.1717775431298 ev_labeled
+28.925140581420226 actors
+11.656563191364997 commit_before3m
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.6686051669683097
+f
+subsampling done, neg class
+balance after 0.6499990630036355
+Training done
+[[ 37350  75313]
+ [ 56399 388944]]
+Obtained auc 0.678 Feautres at 0 Predction at 180, ACC=0.764 F1=0.855
+0.678,0,180,all,2021-09-17T01:33:59.927169,randomforest_ntrees=1000_m_depth=5, 0.7639595273169105,0.8551978891820581,213448,558006,0.6499990630036355, 0.7980971530772071, 0.8377773517685247, 0.8733582878814756
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 0 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02     931
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   40453 2013-01-18 14:49:21 2014-12-31 23:16:39   29095
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT       0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT       0
+1          0     2013-09-01 00:08:39 2014-12-31 23:30:55  457839 2013-09-01 00:15:58 2014-12-31 23:59:04  457839
+           1     2012-01-04 22:32:02 2013-08-31 22:42:51  153110 2012-01-09 05:08:02 2013-08-31 23:54:45  153110
+%created_before3m,closed_before3m,0.860
+%created_before3m,commit_before3m,0.638
+%closed_before3m,commit_before3m,0.625
+%actors,commits_by_commiters_before3m,0.722
+%actors,commits_by_commenters_nunique,0.725
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.999
+%ev_mentioned,ev_subscribed,0.701
+%created_before_project3m,closed_before_project3m,0.870
+%created_before_project3m,created_before_project2w_sliding,0.742
+%created_before_project3m,closed_before_project2w_sliding,0.682
+%closed_before_project3m,commit_before_project3m,0.542
+%closed_before_project3m,created_before_project2w_sliding,0.567
+%closed_before_project3m,closed_before_project2w_sliding,0.753
+%commit_before_project3m,commit_before_project2w_sliding,0.807
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.743
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.519
+800029.8211012995 closed_before_project3m
+549156.6406142291 closed_before3m
+521539.61691745505 created_before_project3m
+310646.93444179127 closed_before_project2w_sliding
+203778.9158272383 created_before3m
+150667.681663944 commit_before_project3m
+107459.58905203259 created_before_project2w_sliding
+102780.22737815797 body_len_strip
+85453.60501285776 commit_before_project2w_sliding
+34911.67087548648 commits_by_commiters_before3m
+1690.010676999019 ev_referenced
+612.7000653125205 comment_len_mean
+549.1235414111413 comment_before_12month
+446.90518283847484 commits_by_commenters_nunique
+255.59773169465754 ev_labeled
+171.36037499310274 ev_assigned
+99.11473812730321 ev_mentioned
+67.83186828121922 commit_before3m
+62.511263032167335 ev_subscribed
+11.361890123536671 actors
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.7910086121831135
+f
+subsampling done, neg class
+balance after 0.65
+Training done
+[[ 10880  18371]
+ [ 76533 381306]]
+Obtained auc 0.659 Feautres at 0 Predction at 365, ACC=0.805 F1=0.889
+0.659,0,365,all,2021-09-17T01:37:15.083264,randomforest_ntrees=1000_m_depth=5, 0.805161263832146,0.8893268463795428,115580,487090,0.65, 0.9399474429776838, 0.9540353835722346, 0.832838617942115
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 1 days
+Predicting issue closure at 7 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  679700 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  282043 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-25 00:10:26 2013-08-31 23:58:34    1536                 NaT                 NaT       0
+14    2014-12-25 00:02:22 2014-12-31 23:59:44    3758                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-24 23:59:34  377052 2013-09-08 08:10:48 2014-12-31 23:59:04  183107
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  162073 2012-01-21 06:50:33 2014-12-31 23:16:39   81943
+           13    2013-08-25 00:10:26 2013-08-31 23:58:34    1487                 NaT                 NaT       0
+           14    2014-12-25 00:02:22 2014-12-31 23:59:44    3611                 NaT                 NaT       0
+1          0     2013-09-01 00:20:09 2014-12-30 21:46:29  109639 2013-09-02 07:37:34 2014-12-31 23:45:52  109639
+           1     2012-01-07 20:00:48 2013-08-30 22:36:40   39259 2012-01-09 07:56:45 2013-08-31 23:54:45   39259
+%created_before3m,closed_before3m,0.839
+%created_before3m,commit_before3m,0.623
+%closed_before3m,commit_before3m,0.614
+%comment_before_12month,comment_len_mean,0.677
+%actors,commits_by_commiters_before3m,0.523
+%actors,commits_by_commenters_nunique,0.577
+%actors,comment_len_mean,0.657
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.961
+%ev_mentioned,ev_subscribed,0.809
+%created_before_project3m,closed_before_project3m,0.851
+%created_before_project3m,created_before_project2w_sliding,0.666
+%created_before_project3m,closed_before_project2w_sliding,0.646
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.705
+%commit_before_project3m,commit_before_project2w_sliding,0.792
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.688
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.514
+1248138.7000887468 closed_before3m
+892611.9122881182 closed_before_project3m
+509230.8408484638 comment_len_mean
+357749.5507821987 created_before3m
+347732.09203073377 closed_before_project2w_sliding
+301493.18828843336 created_before_project3m
+282117.8699150181 commits_by_commiters_before3m
+157223.2588794281 commit_before_project3m
+135545.05605264267 commit_before_project2w_sliding
+28375.23368234629 created_before_project2w_sliding
+12103.074394442623 body_len_strip
+4957.6616908718925 commits_by_commenters_nunique
+3950.5567135707474 commit_before3m
+2829.3679438932922 comment_before_12month
+2605.784999507055 ev_subscribed
+1943.567529474381 ev_assigned
+1760.186899770976 ev_referenced
+1088.2740114176102 ev_mentioned
+947.7812105892341 actors
+23.98080494591943 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.19499632447897006
+f
+subsampling done, pos class
+balance after 0.3500017830397261
+Training done
+[[190987 186065]
+ [ 34207  75432]]
+Obtained auc 0.640 Feautres at 1 Predction at 7, ACC=0.547 F1=0.406
+0.640,1,7,all,2021-09-17T01:41:20.784780,randomforest_ntrees=1000_m_depth=5, 0.5474089309233169,0.4064924987066736,112168,486691,0.3500017830397261, 0.22527435272072013, 0.28846220033117015, 0.6880033564698693
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 1 days
+Predicting issue closure at 14 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  675190 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  280354 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-18 00:08:02 2013-08-31 23:58:34    3225                 NaT                 NaT       0
+14    2014-12-18 00:02:00 2014-12-31 23:59:44    8268                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-17 23:59:33  329055 2013-09-16 19:25:15 2014-12-31 23:59:04  139413
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  145880 2012-01-21 06:50:33 2014-12-31 23:16:39   67343
+           13    2013-08-18 00:08:02 2013-08-31 23:58:34    3080                 NaT                 NaT       0
+           14    2014-12-18 00:02:00 2014-12-31 23:59:44    7914                 NaT                 NaT       0
+1          0     2013-09-01 00:20:09 2014-12-30 21:46:29  153333 2013-09-02 07:37:34 2014-12-31 23:45:52  153333
+           1     2012-01-07 20:00:48 2013-08-30 22:36:40   53859 2012-01-09 07:56:45 2013-08-31 23:54:45   53859
+%created_before3m,closed_before3m,0.839
+%created_before3m,commit_before3m,0.623
+%closed_before3m,commit_before3m,0.614
+%comment_before_12month,comment_len_mean,0.677
+%actors,commits_by_commiters_before3m,0.523
+%actors,commits_by_commenters_nunique,0.577
+%actors,comment_len_mean,0.657
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.961
+%ev_mentioned,ev_subscribed,0.809
+%created_before_project3m,closed_before_project3m,0.851
+%created_before_project3m,created_before_project2w_sliding,0.666
+%created_before_project3m,closed_before_project2w_sliding,0.646
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.705
+%commit_before_project3m,commit_before_project2w_sliding,0.792
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.688
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.514
+960581.2845322698 closed_before3m
+767140.6877955 closed_before_project3m
+576077.9691543404 comment_len_mean
+346689.30035754055 commits_by_commiters_before3m
+277923.3795676011 closed_before_project2w_sliding
+229492.06804838756 created_before3m
+215846.54242321488 commit_before_project3m
+209247.90153985738 created_before_project3m
+167449.16723601136 commit_before_project2w_sliding
+13268.533916199694 commit_before3m
+6533.812596007783 commits_by_commenters_nunique
+4134.002728066503 created_before_project2w_sliding
+4040.938415801691 ev_subscribed
+3509.6351336186876 ev_referenced
+3329.1207837674865 ev_assigned
+2535.550009946923 comment_before_12month
+2374.415902185081 body_len_strip
+1796.4969240341002 ev_mentioned
+1160.518117783773 actors
+35.812469152728276 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.2696468891903935
+f
+subsampling done, pos class
+balance after 0.35000194954575586
+Training done
+[[177289 151766]
+ [ 52755 100578]]
+Obtained auc 0.643 Feautres at 1 Predction at 14, ACC=0.576 F1=0.496
+0.643,1,14,all,2021-09-17T01:45:31.771284,randomforest_ntrees=1000_m_depth=5, 0.5760238646069139,0.49585261180693,153882,482388,0.35000194954575586, 0.31786238463643374, 0.39857496116412516, 0.6559449042280526
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 1 days
+Predicting issue closure at 30 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  663872 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  276350 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-02 00:00:51 2013-08-31 23:58:34    7229                 NaT                 NaT       0
+14    2014-12-02 00:09:51 2014-12-31 23:59:44   19586                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-01 23:55:35  271631 2013-10-01 04:15:29 2014-12-31 23:59:04   92891
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  127674 2012-02-15 01:16:03 2014-12-31 23:16:39   52849
+           13    2013-08-02 00:00:51 2013-08-31 23:58:34    6792                 NaT                 NaT       0
+           14    2014-12-02 00:09:51 2014-12-31 23:59:44   18816                 NaT                 NaT       0
+1          0     2013-09-01 00:20:09 2014-12-30 21:46:29  199855 2013-09-02 07:37:34 2014-12-31 23:54:54  199855
+           1     2012-01-04 22:32:17 2013-08-30 22:36:40   68353 2012-01-09 07:56:45 2013-08-31 23:54:45   68353
+%created_before3m,closed_before3m,0.839
+%created_before3m,commit_before3m,0.623
+%closed_before3m,commit_before3m,0.614
+%comment_before_12month,comment_len_mean,0.677
+%actors,commits_by_commiters_before3m,0.523
+%actors,commits_by_commenters_nunique,0.577
+%actors,comment_len_mean,0.657
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.961
+%ev_mentioned,ev_subscribed,0.809
+%created_before_project3m,closed_before_project3m,0.851
+%created_before_project3m,created_before_project2w_sliding,0.666
+%created_before_project3m,closed_before_project2w_sliding,0.646
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.705
+%commit_before_project3m,commit_before_project2w_sliding,0.792
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.688
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.514
+736423.5466400788 closed_before3m
+675445.8239539145 closed_before_project3m
+649078.2469141458 comment_len_mean
+372553.45651602146 commits_by_commiters_before3m
+233962.046051656 commit_before_project3m
+221144.20610988117 closed_before_project2w_sliding
+170909.52926775717 created_before3m
+163854.60017272388 commit_before_project2w_sliding
+155656.7556654489 created_before_project3m
+15202.478465439704 commit_before3m
+7960.535556247512 commits_by_commenters_nunique
+6440.415728148308 ev_subscribed
+6333.305519177227 ev_referenced
+4685.779356631687 ev_assigned
+3056.317541673413 ev_mentioned
+2038.6213552898666 comment_before_12month
+1507.8795156839763 actors
+345.30743721104625 created_before_project2w_sliding
+65.06720193777551 body_len_strip
+50.86027695537071 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.34869176184913303
+f
+subsampling done, pos class
+balance after 0.35000051204850124
+Training done
+[[154304 117327]
+ [ 72677 127178]]
+Obtained auc 0.651 Feautres at 1 Predction at 30, ACC=0.597 F1=0.572
+0.651,1,30,all,2021-09-17T01:49:48.536485,randomforest_ntrees=1000_m_depth=5, 0.5970103035933199,0.5724097578539923,195294,471486,0.35000051204850124, 0.42388321180268346, 0.52014478231529, 0.6363513547321809
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 1 days
+Predicting issue closure at 90 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  625739 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  263160 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-06-03 00:02:10 2013-08-31 23:58:34   20419                 NaT                 NaT       0
+14    2014-10-03 00:05:12 2014-12-31 23:59:44   57719                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:18:29 2014-10-02 23:58:52  179994 2013-12-02 10:55:34 2014-12-31 23:59:04   37690
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   99279 2012-04-12 19:46:06 2014-12-31 23:16:39   37018
+           13    2013-06-03 00:02:10 2013-08-31 23:58:34   19356                 NaT                 NaT       0
+           14    2014-10-03 00:05:12 2014-12-31 23:59:44   55252                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-30 21:46:29  255056 2013-09-02 07:37:34 2014-12-31 23:54:54  255056
+           1     2012-01-04 22:32:17 2013-08-30 22:36:40   84184 2012-01-09 07:56:45 2013-08-31 23:54:45   84184
+%created_before3m,closed_before3m,0.839
+%created_before3m,commit_before3m,0.623
+%closed_before3m,commit_before3m,0.614
+%comment_before_12month,comment_len_mean,0.677
+%actors,commits_by_commiters_before3m,0.523
+%actors,commits_by_commenters_nunique,0.577
+%actors,comment_len_mean,0.657
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.961
+%ev_mentioned,ev_subscribed,0.809
+%created_before_project3m,closed_before_project3m,0.851
+%created_before_project3m,created_before_project2w_sliding,0.666
+%created_before_project3m,closed_before_project2w_sliding,0.646
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.705
+%commit_before_project3m,commit_before_project2w_sliding,0.792
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.688
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.514
+696094.9222606064 closed_before3m
+663136.9896067075 comment_len_mean
+602637.1455303142 closed_before_project3m
+354767.89715153317 commits_by_commiters_before3m
+162129.87545747746 commit_before_project3m
+157369.3634521393 closed_before_project2w_sliding
+147164.99799182435 created_before3m
+118568.27065614262 commit_before_project2w_sliding
+90836.78695316255 created_before_project3m
+15790.577611008433 body_len_strip
+14504.461060990528 created_before_project2w_sliding
+8741.32571898655 ev_referenced
+8282.380565260559 commits_by_commenters_nunique
+7806.584837377914 ev_subscribed
+6299.9928937075465 commit_before3m
+5106.114428999885 ev_assigned
+3547.062726037012 ev_mentioned
+1714.763587371702 actors
+1483.0392006261782 comment_before_12month
+73.51213908085268 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.4588609147348512
+balance after 0.4588609147348512
+Training done
+[[104621  75373]
+ [ 92623 162433]]
+Obtained auc 0.659 Feautres at 1 Predction at 90, ACC=0.614 F1=0.659
+0.659,1,90,all,2021-09-17T01:53:50.085363,randomforest_ntrees=1000_m_depth=5, 0.6138466842891621,0.6591419099058153,183463,435050,0.4588609147348512, 0.586268245029307, 0.6830483671564216, 0.636852299102942
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 1 days
+Predicting issue closure at 180 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  581223 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  243501 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-03-05 00:10:36 2013-08-31 23:58:34   40078                 NaT                 NaT       0
+14    2014-07-05 00:01:22 2014-12-31 23:59:44  102235                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2014-07-04 23:59:12  112663 2014-03-02 03:19:09 2014-12-31 23:59:04   13427
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   74682 2012-08-10 04:18:15 2014-12-31 23:16:39   31455
+           13    2013-03-05 00:10:36 2013-08-31 23:58:34   38390                 NaT                 NaT       0
+           14    2014-07-05 00:01:22 2014-12-31 23:59:44   98320                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-30 21:46:29  279319 2013-09-02 07:37:34 2014-12-31 23:55:57  279319
+           1     2012-01-04 22:32:02 2013-08-30 22:36:40   89747 2012-01-09 07:56:45 2013-08-31 23:54:45   89747
+%created_before3m,closed_before3m,0.839
+%created_before3m,commit_before3m,0.623
+%closed_before3m,commit_before3m,0.614
+%comment_before_12month,comment_len_mean,0.677
+%actors,commits_by_commiters_before3m,0.523
+%actors,commits_by_commenters_nunique,0.577
+%actors,comment_len_mean,0.657
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.961
+%ev_mentioned,ev_subscribed,0.809
+%created_before_project3m,closed_before_project3m,0.851
+%created_before_project3m,created_before_project2w_sliding,0.666
+%created_before_project3m,closed_before_project2w_sliding,0.646
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.705
+%commit_before_project3m,commit_before_project2w_sliding,0.792
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.688
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.514
+855878.6548721851 closed_before_project3m
+602704.963746465 closed_before3m
+598044.7837509017 comment_len_mean
+267856.3979037792 commits_by_commiters_before3m
+182451.67072141505 closed_before_project2w_sliding
+170954.87808159593 created_before_project3m
+148260.4195112411 commit_before_project3m
+100211.63539900805 created_before3m
+72965.98862452374 commit_before_project2w_sliding
+22122.998198659872 created_before_project2w_sliding
+8848.564895398229 body_len_strip
+7188.0523538954385 ev_referenced
+6386.979548034283 commits_by_commenters_nunique
+5492.001502593619 ev_subscribed
+3876.107449256233 ev_assigned
+2586.773750141757 ev_mentioned
+1553.7910402343696 commit_before3m
+1424.9344538701648 actors
+1072.5128788492204 comment_before_12month
+98.99155065888854 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.5458100456732085
+balance after 0.5458100456732085
+Training done
+[[ 54464  58199]
+ [ 68544 210775]]
+Obtained auc 0.670 Feautres at 1 Predction at 180, ACC=0.677 F1=0.769
+0.670,1,180,all,2021-09-17T01:57:35.613356,randomforest_ntrees=1000_m_depth=5, 0.6766611732171375,0.7688407475565073,164429,391982,0.5458100456732085, 0.7125811899525999, 0.7836259266694923, 0.7546031598280103
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 1 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02     931
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   40428 2013-01-18 14:49:21 2014-12-31 23:16:39   29070
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT       0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-30 21:46:29  291815 2013-09-02 07:37:34 2014-12-31 23:59:04  291815
+           1     2012-01-04 22:32:02 2013-08-30 22:36:40   92132 2012-01-09 07:56:45 2013-08-31 23:54:45   92132
+%created_before3m,closed_before3m,0.839
+%created_before3m,commit_before3m,0.623
+%closed_before3m,commit_before3m,0.614
+%comment_before_12month,comment_len_mean,0.677
+%actors,commits_by_commiters_before3m,0.523
+%actors,commits_by_commenters_nunique,0.577
+%actors,comment_len_mean,0.657
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.961
+%ev_mentioned,ev_subscribed,0.809
+%created_before_project3m,closed_before_project3m,0.851
+%created_before_project3m,created_before_project2w_sliding,0.666
+%created_before_project3m,closed_before_project2w_sliding,0.646
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.705
+%commit_before_project3m,commit_before_project2w_sliding,0.792
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.688
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.514
+495948.6719514826 closed_before_project3m
+384175.49868357176 closed_before3m
+296010.1062633971 created_before_project3m
+193062.12991815468 comment_len_mean
+168292.44159374235 closed_before_project2w_sliding
+124259.2836976866 created_before3m
+108653.12669798314 commits_by_commiters_before3m
+64006.278583000385 commit_before_project3m
+56412.16786900391 body_len_strip
+39036.11561083008 commit_before_project2w_sliding
+8353.7164561509 created_before_project2w_sliding
+3494.9584377114097 ev_referenced
+2326.7521086147012 commits_by_commenters_nunique
+1670.9648920501418 commit_before3m
+1507.099505672758 ev_assigned
+1393.1058572097709 comment_before_12month
+1185.3964456055478 ev_subscribed
+492.1186724292426 actors
+470.4451697754313 ev_mentioned
+168.97993932979603 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.6950211225105613
+f
+subsampling done, neg class
+balance after 0.6499982685181979
+Training done
+[[ 11898  17353]
+ [ 62121 229694]]
+Obtained auc 0.655 Feautres at 1 Predction at 365, ACC=0.752 F1=0.853
+0.655,1,365,all,2021-09-17T02:01:02.669550,randomforest_ntrees=1000_m_depth=5, 0.7524683398428983,0.8525151151871908,115508,321066,0.6499982685181979, 0.9088941214578934, 0.9297583050998393, 0.7871219779654919
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 7 days
+Predicting issue closure at 14 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  675190 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  280354 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-18 00:08:02 2013-08-31 23:58:34    3225                 NaT                 NaT       0
+14    2014-12-18 00:02:00 2014-12-31 23:59:44    8268                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-17 23:59:33  329055 2013-09-16 19:25:15 2014-12-31 23:59:04  139413
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  145347 2012-01-21 06:50:33 2014-12-31 23:16:39   66810
+           13    2013-08-18 00:08:02 2013-08-31 23:58:34    3080                 NaT                 NaT       0
+           14    2014-12-18 00:02:00 2014-12-31 23:59:44    7914                 NaT                 NaT       0
+1          0     2013-09-01 01:26:41 2014-12-24 17:32:34   43694 2013-09-08 08:10:48 2014-12-31 23:15:47   43694
+           1     2012-01-13 02:22:49 2013-08-24 20:49:09   14600 2012-01-21 20:36:08 2013-08-31 21:43:03   14600
+%created_before3m,closed_before3m,0.815
+%created_before3m,commit_before3m,0.619
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.550
+%comment_before_12month,comment_len_mean,0.708
+%actors,commits_by_commiters_before3m,0.526
+%actors,commits_by_commenters_nunique,0.597
+%actors,comment_len_mean,0.683
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.949
+%ev_mentioned,ev_subscribed,0.838
+%created_before_project3m,closed_before_project3m,0.831
+%created_before_project3m,created_before_project2w_sliding,0.591
+%created_before_project3m,closed_before_project2w_sliding,0.571
+%closed_before_project3m,commit_before_project3m,0.549
+%closed_before_project3m,closed_before_project2w_sliding,0.601
+%commit_before_project3m,commit_before_project2w_sliding,0.736
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.679
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.517
+177901.72570998166 commits_by_commiters_before3m
+166732.59936573476 comment_len_mean
+62598.38440191429 commit_before_project3m
+40836.294190795714 closed_before_project3m
+35847.38034743259 commit_before_project2w_sliding
+23357.835535186266 closed_before3m
+13696.714438380443 created_before_project2w_sliding
+13233.459781342506 closed_before_project2w_sliding
+12144.447600714735 commit_before3m
+5313.506663670971 body_len_strip
+4330.990828769517 ev_referenced
+2988.6943371764323 ev_subscribed
+2973.991595599069 commits_by_commenters_nunique
+2286.6029802032635 ev_assigned
+2027.4706179443626 comment_before_12month
+1965.9215216410257 ev_mentioned
+557.6888827284329 actors
+452.55363505301153 created_before_project3m
+146.5875241189328 created_before3m
+9.743579158840566 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.09128023657836658
+f
+subsampling done, pos class
+balance after 0.3500023972766937
+Training done
+[[174767 154288]
+ [ 15428  28266]]
+Obtained auc 0.639 Feautres at 7 Predction at 14, ACC=0.545 F1=0.250
+0.639,7,14,all,2021-09-17T02:04:44.141094,randomforest_ntrees=1000_m_depth=5, 0.5446909314310703,0.24986740214278136,41714,372749,0.3500023972766937, 0.11722097175311, 0.15483637718154628, 0.6469080422941365
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 7 days
+Predicting issue closure at 30 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  663872 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  276350 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-02 00:00:51 2013-08-31 23:58:34    7229                 NaT                 NaT       0
+14    2014-12-02 00:09:51 2014-12-31 23:59:44   19586                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-01 23:55:35  271631 2013-10-01 04:15:29 2014-12-31 23:59:04  92891
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  127141 2012-02-15 01:16:03 2014-12-31 23:16:39  52316
+           13    2013-08-02 00:00:51 2013-08-31 23:58:34    6792                 NaT                 NaT      0
+           14    2014-12-02 00:09:51 2014-12-31 23:59:44   18816                 NaT                 NaT      0
+1          0     2013-09-01 01:07:54 2014-12-24 17:32:34   90216 2013-09-08 08:10:48 2014-12-31 23:54:54  90216
+           1     2012-01-04 22:32:17 2013-08-24 20:49:09   29094 2012-01-21 06:50:33 2013-08-31 23:43:18  29094
+%created_before3m,closed_before3m,0.815
+%created_before3m,commit_before3m,0.619
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.550
+%comment_before_12month,comment_len_mean,0.708
+%actors,commits_by_commiters_before3m,0.526
+%actors,commits_by_commenters_nunique,0.597
+%actors,comment_len_mean,0.683
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.949
+%ev_mentioned,ev_subscribed,0.838
+%created_before_project3m,closed_before_project3m,0.831
+%created_before_project3m,created_before_project2w_sliding,0.591
+%created_before_project3m,closed_before_project2w_sliding,0.571
+%closed_before_project3m,commit_before_project3m,0.549
+%closed_before_project3m,closed_before_project2w_sliding,0.601
+%commit_before_project3m,commit_before_project2w_sliding,0.736
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.679
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.517
+311812.4517903924 comment_len_mean
+263603.1608209952 commits_by_commiters_before3m
+86230.05826518466 commit_before_project3m
+68508.83936972494 closed_before_project3m
+47877.600643405705 commit_before_project2w_sliding
+35502.994919423596 created_before_project2w_sliding
+28905.5616846696 closed_before3m
+15390.012417437947 body_len_strip
+11857.376991330322 commit_before3m
+10792.101431567602 closed_before_project2w_sliding
+8715.273392902256 ev_referenced
+6396.875132264047 ev_subscribed
+5333.991142126621 commits_by_commenters_nunique
+4269.172681489921 ev_assigned
+3951.754115008507 ev_mentioned
+2542.973450813574 comment_before_12month
+1138.4452762044448 actors
+864.2302132906055 created_before_project3m
+236.34759010268644 created_before3m
+21.739092818209702 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.1862194770697987
+f
+subsampling done, pos class
+balance after 0.350003007518797
+Training done
+[[150511 121120]
+ [ 33625  56591]]
+Obtained auc 0.646 Feautres at 7 Predction at 30, ACC=0.572 F1=0.422
+0.646,7,30,all,2021-09-17T02:08:31.204634,randomforest_ntrees=1000_m_depth=5, 0.5723468758895334,0.42243596203443473,83125,361847,0.350003007518797, 0.24932084555074382, 0.31844399052394057, 0.6272834087079897
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 7 days
+Predicting issue closure at 90 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  625739 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  263160 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-06-03 00:02:10 2013-08-31 23:58:34   20419                 NaT                 NaT       0
+14    2014-10-03 00:05:12 2014-12-31 23:59:44   57719                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:18:29 2014-10-02 23:58:52  179994 2013-12-02 10:55:34 2014-12-31 23:59:04   37690
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   98746 2012-04-12 19:46:06 2014-12-31 23:16:39   36485
+           13    2013-06-03 00:02:10 2013-08-31 23:58:34   19356                 NaT                 NaT       0
+           14    2014-10-03 00:05:12 2014-12-31 23:59:44   55252                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-24 17:32:34  145417 2013-09-08 08:10:48 2014-12-31 23:54:54  145417
+           1     2012-01-04 22:32:17 2013-08-24 20:49:09   44925 2012-01-21 06:50:33 2013-08-31 23:43:18   44925
+%created_before3m,closed_before3m,0.815
+%created_before3m,commit_before3m,0.619
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.550
+%comment_before_12month,comment_len_mean,0.708
+%actors,commits_by_commiters_before3m,0.526
+%actors,commits_by_commenters_nunique,0.597
+%actors,comment_len_mean,0.683
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.949
+%ev_mentioned,ev_subscribed,0.838
+%created_before_project3m,closed_before_project3m,0.831
+%created_before_project3m,created_before_project2w_sliding,0.591
+%created_before_project3m,closed_before_project2w_sliding,0.571
+%closed_before_project3m,commit_before_project3m,0.549
+%closed_before_project3m,closed_before_project2w_sliding,0.601
+%commit_before_project3m,commit_before_project2w_sliding,0.736
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.679
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.517
+410082.34547350305 comment_len_mean
+297241.1738547534 commits_by_commiters_before3m
+107454.14929029762 closed_before3m
+96992.96342795741 closed_before_project3m
+72868.52738974069 created_before_project2w_sliding
+52243.708714279404 commit_before_project3m
+32263.295323726816 commit_before_project2w_sliding
+11677.034792674942 ev_referenced
+8465.975461758795 ev_subscribed
+6502.134147411845 commits_by_commenters_nunique
+5967.197272826159 created_before3m
+5643.495375319473 closed_before_project2w_sliding
+4953.757735909052 ev_assigned
+4562.261129700994 ev_mentioned
+3240.388559741618 commit_before3m
+2613.9873046262487 comment_before_12month
+2591.423395838959 body_len_strip
+1588.3736460368473 actors
+185.37640614264387 created_before_project3m
+38.54213881372589 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.31269358464825886
+f
+subsampling done, pos class
+balance after 0.3500003895385526
+Training done
+[[102850  77144]
+ [ 55846  89571]]
+Obtained auc 0.654 Feautres at 7 Predction at 90, ACC=0.591 F1=0.574
+0.654,7,90,all,2021-09-17T02:12:16.095648,randomforest_ntrees=1000_m_depth=5, 0.5913168270279738,0.5739302602744993,128357,325411,0.3500003895385526, 0.44687180212101, 0.5372701916444231, 0.6159596195768032
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 7 days
+Predicting issue closure at 180 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  581223 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  243501 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-03-05 00:10:36 2013-08-31 23:58:34   40078                 NaT                 NaT       0
+14    2014-07-05 00:01:22 2014-12-31 23:59:44  102235                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2014-07-04 23:59:12  112663 2014-03-02 03:19:09 2014-12-31 23:59:04   13427
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   74149 2012-08-10 04:18:15 2014-12-31 23:16:39   30922
+           13    2013-03-05 00:10:36 2013-08-31 23:58:34   38390                 NaT                 NaT       0
+           14    2014-07-05 00:01:22 2014-12-31 23:59:44   98320                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-24 17:32:34  169680 2013-09-08 08:10:48 2014-12-31 23:55:57  169680
+           1     2012-01-04 22:32:02 2013-08-24 20:49:09   50488 2012-01-21 06:50:33 2013-08-31 23:43:18   50488
+%created_before3m,closed_before3m,0.815
+%created_before3m,commit_before3m,0.619
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.550
+%comment_before_12month,comment_len_mean,0.708
+%actors,commits_by_commiters_before3m,0.526
+%actors,commits_by_commenters_nunique,0.597
+%actors,comment_len_mean,0.683
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.949
+%ev_mentioned,ev_subscribed,0.838
+%created_before_project3m,closed_before_project3m,0.831
+%created_before_project3m,created_before_project2w_sliding,0.591
+%created_before_project3m,closed_before_project2w_sliding,0.571
+%closed_before_project3m,commit_before_project3m,0.549
+%closed_before_project3m,closed_before_project2w_sliding,0.601
+%commit_before_project3m,commit_before_project2w_sliding,0.736
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.679
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.517
+450995.92261481925 comment_len_mean
+241217.4454782557 closed_before_project3m
+233768.06926094985 commits_by_commiters_before3m
+115659.14800150829 closed_before3m
+103983.71684403913 created_before_project2w_sliding
+48675.409925509804 commit_before_project3m
+10771.74596560716 commit_before_project2w_sliding
+9586.720755176373 ev_referenced
+8647.589646848011 created_before_project3m
+7918.306899878099 closed_before_project2w_sliding
+6225.528436617162 ev_subscribed
+5317.907679540169 commits_by_commenters_nunique
+3839.3624247782927 ev_assigned
+3435.364894383356 ev_mentioned
+2100.9868766005484 comment_before_12month
+1430.3716037132294 created_before3m
+1417.4537588733326 actors
+371.9967706747302 commit_before3m
+111.62595403964389 body_len_strip
+55.24378923916527 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.40508035334611714
+balance after 0.40508035334611714
+Training done
+[[ 61585  51078]
+ [ 53125 116555]]
+Obtained auc 0.672 Feautres at 7 Predction at 180, ACC=0.631 F1=0.691
+0.672,7,180,all,2021-09-17T02:15:42.949544,randomforest_ntrees=1000_m_depth=5, 0.6309347141597277,0.691079205367122,124637,282343,0.40508035334611714, 0.6009711591928966, 0.6952986583787202, 0.6869106553512494
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 7 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02     931
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   39895 2013-01-18 14:49:21 2014-12-31 23:16:39   28537
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT       0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-24 17:32:34  182176 2013-09-08 08:10:48 2014-12-31 23:59:04  182176
+           1     2012-01-04 22:32:02 2013-08-24 20:49:09   52873 2012-01-21 06:50:33 2013-08-31 23:43:18   52873
+%created_before3m,closed_before3m,0.815
+%created_before3m,commit_before3m,0.619
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.550
+%comment_before_12month,comment_len_mean,0.708
+%actors,commits_by_commiters_before3m,0.526
+%actors,commits_by_commenters_nunique,0.597
+%actors,comment_len_mean,0.683
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.949
+%ev_mentioned,ev_subscribed,0.838
+%created_before_project3m,closed_before_project3m,0.831
+%created_before_project3m,created_before_project2w_sliding,0.591
+%created_before_project3m,closed_before_project2w_sliding,0.571
+%closed_before_project3m,commit_before_project3m,0.549
+%closed_before_project3m,closed_before_project2w_sliding,0.601
+%commit_before_project3m,commit_before_project2w_sliding,0.736
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.679
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.517
+146421.36082929335 closed_before_project3m
+141549.84362748626 comment_len_mean
+97708.28131618147 commits_by_commiters_before3m
+93173.88189311497 closed_before3m
+76293.72684781357 created_before_project3m
+31871.901210637916 closed_before_project2w_sliding
+24124.590195684243 body_len_strip
+18339.06419590189 commit_before_project3m
+15658.38009466324 created_before3m
+6791.029841811056 commit_before_project2w_sliding
+4873.134366854933 ev_referenced
+4107.152366196432 created_before_project2w_sliding
+2004.118920273777 commits_by_commenters_nunique
+1815.3191232861984 comment_before_12month
+1658.982159433094 ev_subscribed
+1577.6056136996663 ev_assigned
+1102.3176869149302 commit_before3m
+829.1840145589188 ev_mentioned
+527.7146177214588 actors
+97.45077924655263 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.5699486892031735
+balance after 0.5699486892031735
+Training done
+[[ 15098  14153]
+ [ 55463 126713]]
+Obtained auc 0.644 Feautres at 7 Predction at 365, ACC=0.671 F1=0.784
+0.644,7,365,all,2021-09-17T02:18:46.240927,randomforest_ntrees=1000_m_depth=5, 0.6707326878780856,0.7844986100878523,92768,211427,0.5699486892031735, 0.8616496473960279, 0.8995286300455753, 0.6955526523801159
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 14 days
+Predicting issue closure at 30 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  663872 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  276350 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-08-02 00:00:51 2013-08-31 23:58:34    7229                 NaT                 NaT       0
+14    2014-12-02 00:09:51 2014-12-31 23:59:44   19586                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:09:44 2014-12-01 23:55:35  271631 2013-10-01 04:15:29 2014-12-31 23:59:04  92891
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05  126535 2012-02-15 01:16:03 2014-12-31 23:16:39  51710
+           13    2013-08-02 00:00:51 2013-08-31 23:58:34    6792                 NaT                 NaT      0
+           14    2014-12-02 00:09:51 2014-12-31 23:59:44   18816                 NaT                 NaT      0
+1          0     2013-09-01 01:07:54 2014-12-17 21:46:36   46522 2013-09-16 19:25:15 2014-12-31 23:54:54  46522
+           1     2012-01-04 22:32:17 2013-08-17 00:01:51   14494 2012-01-21 06:50:33 2013-08-31 23:43:18  14494
+%created_before3m,closed_before3m,0.805
+%created_before3m,commit_before3m,0.618
+%closed_before3m,commit_before3m,0.609
+%comment_before_12month,actors,0.578
+%comment_before_12month,comment_len_mean,0.711
+%actors,commits_by_commiters_before3m,0.531
+%actors,commits_by_commenters_nunique,0.609
+%actors,comment_len_mean,0.691
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.944
+%ev_mentioned,ev_subscribed,0.845
+%created_before_project3m,closed_before_project3m,0.823
+%created_before_project3m,created_before_project2w_sliding,0.548
+%created_before_project3m,closed_before_project2w_sliding,0.508
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.502
+%commit_before_project3m,commit_before_project2w_sliding,0.674
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.696
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.525
+211689.8221053424 comment_len_mean
+183041.5450452969 commits_by_commiters_before3m
+28832.92080110712 closed_before_project3m
+28734.800992278433 commit_before_project3m
+19698.76315594998 commit_before_project2w_sliding
+11043.786925954322 body_len_strip
+8868.600024496995 closed_before3m
+7199.121909098971 ev_referenced
+6110.302073881642 created_before_project2w_sliding
+4696.857750548227 ev_subscribed
+3406.043731160293 commits_by_commenters_nunique
+2985.7717503928093 ev_mentioned
+2751.123051368107 ev_assigned
+2153.703551103269 commit_before3m
+2050.4788281706547 comment_before_12month
+1390.000023436079 closed_before_project2w_sliding
+1160.4607627097118 created_before3m
+823.3759910270968 actors
+394.61061220853696 created_before_project3m
+10.881811356541668 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.1027731884931468
+f
+subsampling done, pos class
+balance after 0.3500036222259786
+Training done
+[[144233 127398]
+ [ 16328  30194]]
+Obtained auc 0.650 Feautres at 14 Predction at 30, ACC=0.548 F1=0.296
+0.650,14,30,all,2021-09-17T02:22:18.768100,randomforest_ntrees=1000_m_depth=5, 0.5482487985340386,0.29585427751158666,41411,318153,0.3500036222259786, 0.14622524382922683, 0.19159602010254329, 0.6490262671424273
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 14 days
+Predicting issue closure at 90 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  625739 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  263160 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-06-03 00:02:10 2013-08-31 23:58:34   20419                 NaT                 NaT       0
+14    2014-10-03 00:05:12 2014-12-31 23:59:44   57719                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:18:29 2014-10-02 23:58:52  179994 2013-12-02 10:55:34 2014-12-31 23:59:04   37690
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   98140 2012-04-12 19:46:06 2014-12-31 23:16:39   35879
+           13    2013-06-03 00:02:10 2013-08-31 23:58:34   19356                 NaT                 NaT       0
+           14    2014-10-03 00:05:12 2014-12-31 23:59:44   55252                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-17 21:46:36  101723 2013-09-16 19:25:15 2014-12-31 23:54:54  101723
+           1     2012-01-04 22:32:17 2013-08-17 00:01:51   30325 2012-01-21 06:50:33 2013-08-31 23:43:18   30325
+%created_before3m,closed_before3m,0.805
+%created_before3m,commit_before3m,0.618
+%closed_before3m,commit_before3m,0.609
+%comment_before_12month,actors,0.578
+%comment_before_12month,comment_len_mean,0.711
+%actors,commits_by_commiters_before3m,0.531
+%actors,commits_by_commenters_nunique,0.609
+%actors,comment_len_mean,0.691
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.944
+%ev_mentioned,ev_subscribed,0.845
+%created_before_project3m,closed_before_project3m,0.823
+%created_before_project3m,created_before_project2w_sliding,0.548
+%created_before_project3m,closed_before_project2w_sliding,0.508
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.502
+%commit_before_project3m,commit_before_project2w_sliding,0.674
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.696
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.525
+336108.65083382715 comment_len_mean
+266388.2122153963 commits_by_commiters_before3m
+88300.7786082239 closed_before3m
+55534.34971918634 closed_before_project3m
+21727.142280406653 created_before_project2w_sliding
+15972.969829366139 commit_before_project3m
+12676.680794585922 commit_before_project2w_sliding
+11589.090321898768 ev_referenced
+10038.639773938738 created_before3m
+7785.214265950221 body_len_strip
+7695.824390029999 ev_subscribed
+5062.532918950754 commits_by_commenters_nunique
+4115.843689021706 ev_mentioned
+3909.5901742154333 ev_assigned
+2495.6714078331906 comment_before_12month
+1425.937377614262 actors
+1052.2191205642866 created_before_project3m
+68.2248128412882 closed_before_project2w_sliding
+25.561701258918266 ev_labeled
+18.70875175301268 commit_before3m
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.23605651344724243
+f
+subsampling done, pos class
+balance after 0.35000346252394915
+Training done
+[[99588 80406]
+ [37983 63740]]
+Obtained auc 0.657 Feautres at 14 Predction at 90, ACC=0.580 F1=0.518
+0.657,14,90,all,2021-09-17T02:25:45.686120,randomforest_ntrees=1000_m_depth=5, 0.5797591199679111,0.5184874872391396,86642,281717,0.35000346252394915, 0.36108222081024577, 0.44219055679658126, 0.6266036196337111
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 14 days
+Predicting issue closure at 180 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  581223 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  243501 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-03-05 00:10:36 2013-08-31 23:58:34   40078                 NaT                 NaT       0
+14    2014-07-05 00:01:22 2014-12-31 23:59:44  102235                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2014-07-04 23:59:12  112663 2014-03-02 03:19:09 2014-12-31 23:59:04   13427
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   73543 2012-08-10 04:18:15 2014-12-31 23:16:39   30316
+           13    2013-03-05 00:10:36 2013-08-31 23:58:34   38390                 NaT                 NaT       0
+           14    2014-07-05 00:01:22 2014-12-31 23:59:44   98320                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-17 21:46:36  125986 2013-09-16 19:25:15 2014-12-31 23:55:57  125986
+           1     2012-01-04 22:32:02 2013-08-17 00:01:51   35888 2012-01-21 06:50:33 2013-08-31 23:43:18   35888
+%created_before3m,closed_before3m,0.805
+%created_before3m,commit_before3m,0.618
+%closed_before3m,commit_before3m,0.609
+%comment_before_12month,actors,0.578
+%comment_before_12month,comment_len_mean,0.711
+%actors,commits_by_commiters_before3m,0.531
+%actors,commits_by_commenters_nunique,0.609
+%actors,comment_len_mean,0.691
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.944
+%ev_mentioned,ev_subscribed,0.845
+%created_before_project3m,closed_before_project3m,0.823
+%created_before_project3m,created_before_project2w_sliding,0.548
+%created_before_project3m,closed_before_project2w_sliding,0.508
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.502
+%commit_before_project3m,commit_before_project2w_sliding,0.674
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.696
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.525
+410125.2726971941 comment_len_mean
+214047.83793711057 commits_by_commiters_before3m
+157554.46191968996 closed_before_project3m
+93485.46735815873 closed_before3m
+46065.363802959386 created_before_project2w_sliding
+15495.079265276192 commit_before_project3m
+9740.842687253453 ev_referenced
+5835.033498265207 ev_subscribed
+4334.697929213327 commits_by_commenters_nunique
+3192.113564483986 ev_mentioned
+3132.8022585634913 ev_assigned
+2578.994347297822 created_before3m
+2322.145942885788 created_before_project3m
+2090.368293978151 comment_before_12month
+1332.0350916037119 actors
+1089.1887186385998 commit_before_project2w_sliding
+981.4280918566578 body_len_strip
+736.7822557965278 commit_before3m
+50.743445379998455 closed_before_project2w_sliding
+39.04363449463034 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.32795094625837284
+f
+subsampling done, pos class
+balance after 0.35000048762885594
+Training done
+[[60583 52080]
+ [40692 85294]]
+Obtained auc 0.675 Feautres at 14 Predction at 180, ACC=0.611 F1=0.648
+0.675,14,180,all,2021-09-17T02:29:02.788046,randomforest_ntrees=1000_m_depth=5, 0.6112617274742405,0.6477369380315917,102537,238649,0.35000048762885594, 0.5279133790629753, 0.6208889600652234, 0.6770117314622259
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 14 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max   count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02     931
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   39289 2013-01-18 14:49:21 2014-12-31 23:16:39   27931
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT       0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT       0
+1          0     2013-09-01 00:09:44 2014-12-17 21:46:36  138482 2013-09-16 19:25:15 2014-12-31 23:59:04  138482
+           1     2012-01-04 22:32:02 2013-08-17 00:01:51   38273 2012-01-21 06:50:33 2013-08-31 23:43:18   38273
+%created_before3m,closed_before3m,0.805
+%created_before3m,commit_before3m,0.618
+%closed_before3m,commit_before3m,0.609
+%comment_before_12month,actors,0.578
+%comment_before_12month,comment_len_mean,0.711
+%actors,commits_by_commiters_before3m,0.531
+%actors,commits_by_commenters_nunique,0.609
+%actors,comment_len_mean,0.691
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.944
+%ev_mentioned,ev_subscribed,0.845
+%created_before_project3m,closed_before_project3m,0.823
+%created_before_project3m,created_before_project2w_sliding,0.548
+%created_before_project3m,closed_before_project2w_sliding,0.508
+%closed_before_project3m,commit_before_project3m,0.547
+%closed_before_project3m,closed_before_project2w_sliding,0.502
+%commit_before_project3m,commit_before_project2w_sliding,0.674
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.696
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.525
+136019.31410262315 comment_len_mean
+98742.47568089863 closed_before_project3m
+93300.25362233199 commits_by_commiters_before3m
+79011.49428740813 closed_before3m
+50467.2439910379 created_before_project3m
+27637.19385468967 body_len_strip
+16014.824527772638 created_before3m
+11505.252569585708 closed_before_project2w_sliding
+5054.4455176905285 ev_referenced
+4508.338390613097 commit_before_project3m
+1699.770964477413 commits_by_commenters_nunique
+1645.946483890748 comment_before_12month
+1623.3258325583192 ev_subscribed
+1299.870218851844 ev_assigned
+960.3634039969195 commit_before_project2w_sliding
+760.7975700363322 ev_mentioned
+517.9059025399902 actors
+354.92526085429 created_before_project2w_sliding
+71.11248281412074 ev_labeled
+0.380647071237352 commit_before3m
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.49345040096954695
+balance after 0.49345040096954695
+Training done
+[[16466 12785]
+ [47431 91051]]
+Obtained auc 0.637 Feautres at 14 Predction at 365, ACC=0.641 F1=0.752
+0.637,14,365,all,2021-09-17T02:31:52.862885,randomforest_ntrees=1000_m_depth=5, 0.6410008763928386,0.7515000949165972,77562,167733,0.49345040096954695, 0.8256097488270048, 0.8768731461150275, 0.6574933926430871
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 30 days
+Predicting issue closure at 90 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  625739 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  263160 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-06-03 00:02:10 2013-08-31 23:58:34   20419                 NaT                 NaT       0
+14    2014-10-03 00:05:12 2014-12-31 23:59:44   57719                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:18:29 2014-10-02 23:58:52  179994 2013-12-02 10:55:34 2014-12-31 23:59:04  37690
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   96841 2012-04-12 19:46:06 2014-12-31 23:16:39  34580
+           13    2013-06-03 00:02:10 2013-08-31 23:58:34   19356                 NaT                 NaT      0
+           14    2014-10-03 00:05:12 2014-12-31 23:59:44   55252                 NaT                 NaT      0
+1          0     2013-09-01 00:09:44 2014-12-01 17:32:04   55201 2013-10-01 04:15:29 2014-12-31 23:45:49  55201
+           1     2012-01-13 14:38:02 2013-08-01 17:32:14   15831 2012-02-15 01:16:03 2013-08-31 23:24:37  15831
+%created_before3m,closed_before3m,0.795
+%created_before3m,commit_before3m,0.617
+%closed_before3m,commit_before3m,0.608
+%comment_before_12month,actors,0.609
+%comment_before_12month,comment_len_mean,0.712
+%actors,commits_by_commiters_before3m,0.537
+%actors,commits_by_commenters_nunique,0.622
+%actors,comment_len_mean,0.699
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.939
+%commits_by_commenters_nunique,comment_len_mean,0.502
+%ev_mentioned,ev_subscribed,0.853
+%created_before_project3m,closed_before_project3m,0.814
+%closed_before_project3m,commit_before_project3m,0.544
+%commit_before_project3m,commit_before_project2w_sliding,0.577
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.763
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.568
+218501.2761067462 commits_by_commiters_before3m
+191090.49667497707 comment_len_mean
+97370.75220046628 closed_before3m
+35600.89549875781 body_len_strip
+22265.384501865396 closed_before_project3m
+11425.332566577546 created_before3m
+9217.7994099971 ev_referenced
+7870.388638574752 commit_before_project2w_sliding
+5480.231387710658 ev_subscribed
+4607.822056763308 created_before_project3m
+3068.244763300677 commits_by_commenters_nunique
+2898.795821132383 ev_mentioned
+2332.695092517595 ev_assigned
+2133.381630948481 comment_before_12month
+1003.7399082873352 commit_before_project3m
+954.6592545554479 actors
+922.6268283390821 commit_before3m
+113.02183422025767 closed_before_project2w_sliding
+90.17109554994977 created_before_project2w_sliding
+12.640195349091732 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.14050518318659472
+f
+subsampling done, pos class
+balance after 0.3500033163096107
+Training done
+[[95667 84327]
+ [19651 35550]]
+Obtained auc 0.657 Feautres at 30 Predction at 90, ACC=0.558 F1=0.406
+0.657,30,90,all,2021-09-17T02:35:05.838941,randomforest_ntrees=1000_m_depth=5, 0.557907268436829,0.406104707616034,45231,235195,0.3500033163096107, 0.23470311868874763, 0.29655396781701243, 0.6440100722812993
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 30 days
+Predicting issue closure at 180 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  581223 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  243501 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-03-05 00:10:36 2013-08-31 23:58:34   40078                 NaT                 NaT       0
+14    2014-07-05 00:01:22 2014-12-31 23:59:44  102235                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:26:45 2014-07-04 23:59:12  112663 2014-03-02 03:19:09 2014-12-31 23:59:04  13427
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   72244 2012-08-10 04:18:15 2014-12-31 23:16:39  29017
+           13    2013-03-05 00:10:36 2013-08-31 23:58:34   38390                 NaT                 NaT      0
+           14    2014-07-05 00:01:22 2014-12-31 23:59:44   98320                 NaT                 NaT      0
+1          0     2013-09-01 00:09:44 2014-12-01 17:32:04   79464 2013-10-01 04:15:29 2014-12-31 23:55:57  79464
+           1     2012-01-04 22:32:02 2013-08-01 17:32:14   21394 2012-02-15 01:16:03 2013-08-31 23:43:00  21394
+%created_before3m,closed_before3m,0.795
+%created_before3m,commit_before3m,0.617
+%closed_before3m,commit_before3m,0.608
+%comment_before_12month,actors,0.609
+%comment_before_12month,comment_len_mean,0.712
+%actors,commits_by_commiters_before3m,0.537
+%actors,commits_by_commenters_nunique,0.622
+%actors,comment_len_mean,0.699
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.939
+%commits_by_commenters_nunique,comment_len_mean,0.502
+%ev_mentioned,ev_subscribed,0.853
+%created_before_project3m,closed_before_project3m,0.814
+%closed_before_project3m,commit_before_project3m,0.544
+%commit_before_project3m,commit_before_project2w_sliding,0.577
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.763
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.568
+316499.64877525717 comment_len_mean
+188448.91088986458 commits_by_commiters_before3m
+89114.8494644702 closed_before3m
+72947.71797759685 closed_before_project3m
+8431.983729683518 ev_referenced
+8103.0184853933315 body_len_strip
+4600.077601729244 ev_subscribed
+4461.344139640576 created_before_project2w_sliding
+3303.10818074725 commit_before3m
+3050.6856566945967 commits_by_commenters_nunique
+2536.5744122745145 ev_mentioned
+2086.6912379689516 ev_assigned
+1861.3212293711797 comment_before_12month
+1655.9247792586884 created_before3m
+1030.9060344951677 commit_before_project3m
+1019.1070936573304 actors
+885.4298659808945 created_before_project3m
+497.2805031634414 commit_before_project2w_sliding
+106.5537180202286 closed_before_project2w_sliding
+22.94133157927963 ev_labeled
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.2284756188726799
+f
+subsampling done, pos class
+balance after 0.3500040899795501
+Training done
+[[58851 53812]
+ [25274 54190]]
+Obtained auc 0.676 Feautres at 30 Predction at 180, ACC=0.588 F1=0.578
+0.676,30,180,all,2021-09-17T02:38:06.746566,randomforest_ntrees=1000_m_depth=5, 0.5883660287205859,0.5781315011788803,61125,192127,0.3500040899795501, 0.4136014198941325, 0.5017499675931927, 0.6819440249672808
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 30 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02    931
+           1     2012-01-04 02:52:27 2013-08-31 23:58:05   37990 2013-01-18 14:49:21 2014-12-31 23:16:39  26632
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT      0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT      0
+1          0     2013-09-01 00:09:44 2014-12-01 17:32:04   91960 2013-10-01 04:15:29 2014-12-31 23:59:04  91960
+           1     2012-01-04 22:32:02 2013-08-01 17:32:14   23779 2012-02-15 01:16:03 2013-08-31 23:43:00  23779
+%created_before3m,closed_before3m,0.795
+%created_before3m,commit_before3m,0.617
+%closed_before3m,commit_before3m,0.608
+%comment_before_12month,actors,0.609
+%comment_before_12month,comment_len_mean,0.712
+%actors,commits_by_commiters_before3m,0.537
+%actors,commits_by_commenters_nunique,0.622
+%actors,comment_len_mean,0.699
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.939
+%commits_by_commenters_nunique,comment_len_mean,0.502
+%ev_mentioned,ev_subscribed,0.853
+%created_before_project3m,closed_before_project3m,0.814
+%closed_before_project3m,commit_before_project3m,0.544
+%commit_before_project3m,commit_before_project2w_sliding,0.577
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.763
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.568
+107605.25908237274 comment_len_mean
+93334.14620816194 commits_by_commiters_before3m
+76831.10155257692 closed_before3m
+46705.51410072883 closed_before_project3m
+43068.264397069855 body_len_strip
+16615.575746994924 created_before_project3m
+10508.23118481942 created_before3m
+5740.157499080886 closed_before_project2w_sliding
+4438.543371125318 ev_referenced
+1354.2921329853207 ev_subscribed
+1273.7839935713114 comment_before_12month
+1226.000099848441 commits_by_commenters_nunique
+1155.1016489533056 created_before_project2w_sliding
+880.6480300434184 ev_assigned
+584.722760451212 ev_mentioned
+388.3038498983252 actors
+260.58981506499043 commit_before3m
+97.9929485717625 commit_before_project2w_sliding
+44.99944205883702 ev_labeled
+8.347565644831965 commit_before_project3m
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.3849665689909178
+balance after 0.3849665689909178
+Training done
+[[16352 12899]
+ [31505 60455]]
+Obtained auc 0.638 Feautres at 30 Predction at 365, ACC=0.634 F1=0.731
+0.638,30,365,all,2021-09-17T02:40:42.616296,randomforest_ntrees=1000_m_depth=5, 0.6336636113884053,0.7313960100173004,61769,121211,0.3849665689909178, 0.7586770177624143, 0.8241541020257928, 0.6574053936494128
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 90 days
+Predicting issue closure at 180 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  581223 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  243501 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2013-03-05 00:10:36 2013-08-31 23:58:34   40078                 NaT                 NaT       0
+14    2014-07-05 00:01:22 2014-12-31 23:59:44  102235                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:26:45 2014-07-04 23:59:12  112663 2014-03-02 03:19:09 2014-12-31 23:59:04  13427
+           1     2012-01-04 02:52:27 2013-08-31 23:29:24   67593 2012-08-10 04:18:15 2014-12-31 23:16:39  24366
+           13    2013-03-05 00:10:36 2013-08-31 23:58:34   38390                 NaT                 NaT      0
+           14    2014-07-05 00:01:22 2014-12-31 23:59:44   98320                 NaT                 NaT      0
+1          0     2013-09-01 00:18:29 2014-10-02 08:17:10   24263 2013-12-02 10:55:34 2014-12-31 23:55:57  24263
+           1     2012-01-04 22:32:02 2013-06-02 13:43:02    5563 2012-04-12 19:46:06 2013-08-31 23:43:00   5563
+%created_before3m,closed_before3m,0.785
+%created_before3m,commit_before3m,0.618
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.653
+%comment_before_12month,comment_len_mean,0.711
+%actors,commits_by_commiters_before3m,0.545
+%actors,commits_by_commenters_nunique,0.639
+%actors,comment_len_mean,0.705
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.931
+%commits_by_commenters_nunique,comment_len_mean,0.525
+%ev_mentioned,ev_subscribed,0.859
+%created_before_project3m,closed_before_project3m,0.803
+%closed_before_project3m,commit_before_project3m,0.540
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.809
+%created_before_project2w_sliding,commit_before_project2w_sliding,0.592
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.632
+221076.30204825924 comment_len_mean
+105164.50725892537 commits_by_commiters_before3m
+23500.490007560784 body_len_strip
+16464.89566406321 created_before_project3m
+8926.85298066204 created_before3m
+3454.0238173093976 ev_referenced
+1669.293033505331 ev_subscribed
+1261.372675707035 commits_by_commenters_nunique
+1162.2638958572777 commit_before3m
+1114.9407606238794 ev_mentioned
+847.3429559123597 comment_before_12month
+759.2574230176081 commit_before_project2w_sliding
+668.4285219924208 ev_assigned
+450.63063856586564 actors
+336.8619514601826 closed_before3m
+186.64631497640372 closed_before_project3m
+82.37465798630082 commit_before_project3m
+23.47820030599341 created_before_project2w_sliding
+6.9956208483126945 ev_labeled
+0.4327388976858176 closed_before_project2w_sliding
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.07604297665263272
+f
+subsampling done, pos class
+balance after 0.3500062916823959
+Training done
+[[59064 53599]
+ [ 7232 17031]]
+Obtained auc 0.685 Feautres at 90 Predction at 180, ACC=0.556 F1=0.359
+0.685,90,180,all,2021-09-17T02:43:21.051344,randomforest_ntrees=1000_m_depth=5, 0.5557381359274353,0.3589516613448832,15894,136926,0.3500062916823959, 0.17719790251668785, 0.24112983151635284, 0.7019329843795079
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 90 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02    931
+           1     2012-01-04 02:52:27 2013-08-31 23:29:24   33339 2013-01-18 14:49:21 2014-12-31 23:16:39  21981
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT      0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT      0
+1          0     2013-09-01 00:18:29 2014-10-02 08:17:10   36759 2013-12-02 10:55:34 2014-12-31 23:59:04  36759
+           1     2012-01-04 22:32:02 2013-06-02 13:43:02    7948 2012-04-12 19:46:06 2013-08-31 23:43:00   7948
+%created_before3m,closed_before3m,0.785
+%created_before3m,commit_before3m,0.618
+%closed_before3m,commit_before3m,0.610
+%comment_before_12month,actors,0.653
+%comment_before_12month,comment_len_mean,0.711
+%actors,commits_by_commiters_before3m,0.545
+%actors,commits_by_commenters_nunique,0.639
+%actors,comment_len_mean,0.705
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.931
+%commits_by_commenters_nunique,comment_len_mean,0.525
+%ev_mentioned,ev_subscribed,0.859
+%created_before_project3m,closed_before_project3m,0.803
+%closed_before_project3m,commit_before_project3m,0.540
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.809
+%created_before_project2w_sliding,commit_before_project2w_sliding,0.592
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.632
+109077.7672805652 comment_len_mean
+67020.02214493229 commits_by_commiters_before3m
+3633.5472521119286 commit_before_project2w_sliding
+3258.2592631817975 created_before3m
+3016.410238984898 commit_before3m
+1997.4189099707214 ev_referenced
+1930.690372181561 closed_before3m
+763.7429488073553 body_len_strip
+761.57712401342 ev_subscribed
+701.8325934226839 commits_by_commenters_nunique
+535.2544362230296 created_before_project3m
+506.94726147501336 comment_before_12month
+353.0338201576132 ev_assigned
+295.4749961905318 closed_before_project3m
+288.69890545431934 ev_mentioned
+286.5414865176701 commit_before_project3m
+237.03324107153216 actors
+49.879996608151565 created_before_project2w_sliding
+18.118359878820602 ev_labeled
+0.10167270108016177 closed_before_project2w_sliding
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.19250611572649987
+f
+subsampling done, pos class
+balance after 0.3500088074687335
+Training done
+[[16554 12697]
+ [12752 24007]]
+Obtained auc 0.665 Feautres at 90 Predction at 365, ACC=0.614 F1=0.654
+0.665,90,365,all,2021-09-17T02:45:35.080361,randomforest_ntrees=1000_m_depth=5, 0.6144675049234964,0.653580714100976,22708,66010,0.3500088074687335, 0.5568701711861839, 0.6540704010462075, 0.6530917598411273
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+Calculating dynamic features after 180 days
+Predicting issue closure at 365 days
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:42: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER = pd.datetime(2011,6,1)
+/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code/common_data.py:43: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  FILTER2 = pd.datetime(2015,1,1)
+(920711, 56)
+(920711, 57)
+               created_at                                       closed_at
+                      min                 max   count                 min                 max   count
+train
+0     2013-09-01 00:08:39 2014-12-31 23:30:55  507563 2013-09-01 00:15:58 2014-12-31 23:59:04  478199
+1     2012-01-04 02:52:27 2013-08-31 23:58:05  209401 2012-01-09 05:08:02 2014-12-31 23:16:39  197771
+13    2012-09-01 00:03:47 2013-08-31 23:58:34   74178                 NaT                 NaT       0
+14    2014-01-01 00:57:43 2014-12-31 23:59:44  175895                 NaT                 NaT       0
+                          created_at                                       closed_at
+                                 min                 max   count                 min                 max  count
+closedin12 train
+0          0     2013-09-01 00:26:45 2013-12-31 23:23:18   29251 2014-09-03 03:22:10 2014-12-31 23:17:02    931
+           1     2012-01-04 02:52:27 2013-08-31 23:11:07   27184 2013-01-18 14:49:21 2014-12-31 23:16:39  15826
+           13    2012-09-01 00:03:47 2013-08-31 23:58:34   70259                 NaT                 NaT      0
+           14    2014-01-01 00:57:43 2014-12-31 23:59:44  169236                 NaT                 NaT      0
+1          0     2013-09-01 00:39:48 2014-07-02 16:37:35   12496 2014-03-02 03:19:09 2014-12-31 23:59:04  12496
+           1     2012-01-10 14:03:48 2013-03-03 07:21:36    2385 2012-08-10 04:18:15 2013-08-31 21:53:18   2385
+%created_before3m,closed_before3m,0.781
+%created_before3m,commit_before3m,0.617
+%closed_before3m,commit_before3m,0.609
+%comment_before_12month,actors,0.684
+%comment_before_12month,commits_by_commenters_nunique,0.500
+%comment_before_12month,comment_len_mean,0.710
+%actors,commits_by_commiters_before3m,0.549
+%actors,commits_by_commenters_nunique,0.645
+%actors,comment_len_mean,0.709
+%commits_by_commiters_before3m,commits_by_commenters_nunique,0.928
+%commits_by_commenters_nunique,comment_len_mean,0.536
+%ev_mentioned,ev_subscribed,0.853
+%created_before_project3m,closed_before_project3m,0.799
+%closed_before_project3m,commit_before_project3m,0.538
+%created_before_project2w_sliding,closed_before_project2w_sliding,0.837
+%created_before_project2w_sliding,commit_before_project2w_sliding,0.675
+%closed_before_project2w_sliding,commit_before_project2w_sliding,0.683
+64274.56611990857 commits_by_commiters_before3m
+30573.979854202764 comment_len_mean
+20762.58343371844 commit_before3m
+6239.8768477163 commit_before_project3m
+3237.0445941545827 body_len_strip
+2046.4299610471066 created_before3m
+723.0506773408399 ev_subscribed
+642.2433941264775 commit_before_project2w_sliding
+494.41117439064436 ev_referenced
+400.1301022238621 commits_by_commenters_nunique
+377.8535565584073 closed_before3m
+371.94735877182444 created_before_project3m
+233.29683831940477 comment_before_12month
+187.74349706460114 actors
+181.0198049877285 closed_before_project3m
+160.7179341570519 ev_assigned
+153.98157396334193 ev_mentioned
+7.369776339022957 ev_labeled
+2.832545912425792 closed_before_project2w_sliding
+0.30118568091223474 created_before_project2w_sliding
+Text label  cleaned_text text_score
+Text label  comment_text text_score_comments
+Down sample
+balance before 0.08065879806554162
+f
+subsampling done, pos class
+balance after 0.35001467566774286
+Training done
+[[18856 10395]
+ [ 5038  7458]]
+Obtained auc 0.686 Feautres at 180 Predction at 365, ACC=0.630 F1=0.491
+0.686,180,365,all,2021-09-17T02:47:37.062066,randomforest_ntrees=1000_m_depth=5, 0.6303207416101756,0.49148242116708957,6814,41747,0.35001467566774286, 0.29932689774115506, 0.4177449168207024, 0.596830985915493
+
+train_evaluate.py:451: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+train_evaluate.py:478: MatplotlibDeprecationWarning: Passing the pad parameter of tight_layout() positionally is deprecated since Matplotlib 3.3; the parameter will become keyword-only two minor releases later.
+  plt.tight_layout(0.2)
+28
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+/Users/abramson/miniconda3/envs/posam/lib/python3.8/site-packages/sklearn/utils/validation.py:67: FutureWarning: Pass labels=[1, 0] as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn("Pass {} as keyword args. From version 0.25 "
+F1
+\begin{tabular}{lrrrrrrr}
+\toprule
+ PREDICTION &   1   &   7   &   14  &   30  &   90  &   180 &   365 \\
+ FEATURES &       &       &       &       &       &       &       \\
+\midrule
+0         & 0.449 & 0.614 & 0.669 & 0.725 & 0.800 & 0.855 & 0.889 \\
+1         &       & 0.406 & 0.496 & 0.572 & 0.659 & 0.769 & 0.853 \\
+7         &       &       & 0.250 & 0.422 & 0.574 & 0.691 & 0.784 \\
+14        &       &       &       & 0.296 & 0.518 & 0.648 & 0.752 \\
+30        &       &       &       &       & 0.406 & 0.578 & 0.731 \\
+90        &       &       &       &       &       & 0.359 & 0.654 \\
+180       &       &       &       &       &       &       & 0.491 \\
+\bottomrule
+\end{tabular}
+
+AUC
+\begin{tabular}{lrrrrrrr}
+\toprule
+ PREDICTION &   1   &   7   &   14  &   30  &   90  &   180 &   365 \\
+ FEATURES &       &       &       &       &       &       &       \\
+\midrule
+0         & 0.651 & 0.658 & 0.662 & 0.670 & 0.676 & 0.678 & 0.659 \\
+1         &       & 0.640 & 0.643 & 0.651 & 0.659 & 0.670 & 0.655 \\
+7         &       &       & 0.639 & 0.646 & 0.654 & 0.672 & 0.644 \\
+14        &       &       &       & 0.650 & 0.657 & 0.675 & 0.637 \\
+30        &       &       &       &       & 0.657 & 0.676 & 0.638 \\
+90        &       &       &       &       &       & 0.685 & 0.665 \\
+180       &       &       &       &       &       &       & 0.686 \\
+\bottomrule
+\end{tabular}
+
+ACC
+\begin{tabular}{lrrrrrrr}
+\toprule
+ PREDICTION &   1   &   7   &   14  &   30  &   90  &   180 &   365 \\
+ FEATURES &       &       &       &       &       &       &       \\
+\midrule
+0         & 0.515 & 0.572 & 0.602 & 0.640 & 0.704 & 0.764 & 0.805 \\
+1         &       & 0.547 & 0.576 & 0.597 & 0.614 & 0.677 & 0.752 \\
+7         &       &       & 0.545 & 0.572 & 0.591 & 0.631 & 0.671 \\
+14        &       &       &       & 0.548 & 0.580 & 0.611 & 0.641 \\
+30        &       &       &       &       & 0.558 & 0.588 & 0.634 \\
+90        &       &       &       &       &       & 0.556 & 0.614 \\
+180       &       &       &       &       &       &       & 0.630 \\
+\bottomrule
+\end{tabular}
+
+(posam) abramson@newbie:[/Users/abramson/research/venom/git/github-issue-lifetime-prediction/data_and_code](master) : 

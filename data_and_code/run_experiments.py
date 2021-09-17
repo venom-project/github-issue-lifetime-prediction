@@ -13,7 +13,7 @@ for feat_point in [0,1,7,14,30,90,180,365]:
             cnt+=1       
             os.system("python train_evaluate.py {0} {1} {2}".format(feat_point, prediction_point, exp_name))
             
-print cnt
+print(cnt)
 
 os.system("python tables.py")
 

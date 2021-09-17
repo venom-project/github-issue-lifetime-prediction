@@ -20,17 +20,17 @@ def formatter(x):
 def print_tables():
     df = pd.read_csv(RESULTS_FILE,delimiter=",")
 
-    print "F1"
-    table =  pd.pivot_table(df," F1"," FEATURES"," PREDICTION")
-    print table.to_latex(float_format = formatter ,na_rep="")
+    print("F1")
+    table = pd.pivot_table(df," F1"," FEATURES"," PREDICTION")
+    print(table.to_latex(float_format = formatter ,na_rep=""))
 
-    print "AUC"
-    table =  pd.pivot_table(df,"AUC"," FEATURES"," PREDICTION")
-    print table.to_latex(float_format = formatter ,na_rep="")
+    print("AUC")
+    table = pd.pivot_table(df,"AUC"," FEATURES"," PREDICTION")
+    print(table.to_latex(float_format = formatter ,na_rep=""))
 
-    print "ACC"
-    table =  pd.pivot_table(df," ACC"," FEATURES"," PREDICTION")
-    print table.to_latex(float_format = formatter ,na_rep="")
+    print("ACC")
+    table = pd.pivot_table(df," ACC"," FEATURES"," PREDICTION")
+    print(table.to_latex(float_format = formatter ,na_rep=""))
 
 
 def get_str(ypred, y):
